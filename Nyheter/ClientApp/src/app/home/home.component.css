@@ -1,0 +1,27 @@
+.headline {
+  margin-top: 20px;
+}
+
+.headline .title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .headline .title {
+    font-size: 16px;
+  }
+}
+
+.headline .pub-date,
+.headline .source {
+  font-style: italic;
+}
+
+.headline .category {
+  margin-right: 5px;
+}
+
+.headline .image img {
+  max-width: 100%;
+}

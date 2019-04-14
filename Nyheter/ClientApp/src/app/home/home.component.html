@@ -1,0 +1,20 @@
+<h1>Senaste nyheter {{ meta && meta.title }}</h1>
+
+<p>{{ meta && meta.description }}</p>
+
+<p *ngIf="!news"><em>Loading...</em></p>
+
+<div class="headlines" *ngIf="news">
+  <div class="headline" *ngFor="let item of news">
+    <h2 class="title"><a target="_blank" href="{{ item.url }}">{{ item.title }}</a></h2>
+    <div class="image" *ngIf="item.image"><img src="{{ item.image }}" /></div>
+    <div class="text">{{ item.text }}</div>
+    <div class="categories">
+      <a class="category" *ngFor="let category of item.categories" [routerLink]='["/category/", category.slug]'>
+        #{{ category.name }}
+      </a>
+    </div>
+    <div class="pub-date">{{ item.publishDate }}</div>
+    <div class="source">{{ item.sourceName }}</div>
+  </div>
+</div>
